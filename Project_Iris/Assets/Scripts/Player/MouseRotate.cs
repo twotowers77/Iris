@@ -3,24 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
+[Serializable]
 public class MouseRotate {
 
     public float XSensitivity = 2f;     //X 敏感度
     public float YSensitivity = 2f;     //Y 敏感度
     public bool clampVR = true;         //Vertical Rotation Limited
-    public float MinimumX = -70f;       //X-Axis Minimum Angle Degree
-    public float MaximumX = 70f;        //Y-Axis Max Angle Degree
-    public bool smooth = true;          //smooth setting 
+    public float MinimumX = -90F;       //X-Axis Minimum Angle Degree
+    public float MaximumX = 90F;        //Y-Axis Max Angle Degree
+    public bool smooth;          //smooth setting 
     public float smoothTime = 5f;       //부드러움 (*Time.deltaTime)
     public bool lockCursor = true;      //Mouse Visible (可視性の有無)
 
     private Quaternion CharacterTargetRotate;
     private Quaternion CameraTargetRotate;
     private bool m_cursorIsLocked = true;
-    void start()
-    {
-    }
+
     public void Init(Transform character, Transform camera)
     {
         CharacterTargetRotate = character.localRotation;
@@ -46,7 +44,8 @@ public class MouseRotate {
             character.localRotation = CharacterTargetRotate;
             camera.localRotation = CameraTargetRotate;
         }
-    }
+		UpdateCursorLock();
+	}
 
     public void SetCursorLock(bool value)
     {
@@ -82,7 +81,7 @@ public class MouseRotate {
             Cursor.visible = true;
         }
     }
-    private Quaternion ClampRotationX(Quaternion quat)
+    Quaternion ClampRotationX(Quaternion quat)
     {
         quat.x /= quat.w;
         quat.y /= quat.w;

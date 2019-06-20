@@ -45,10 +45,12 @@ public class ColorBall : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (!(other.gameObject.tag == "CBP"))
+		if(other.gameObject.tag == "obj" || other.gameObject.tag == "Ground")
+		colision_SE.PlayOneShot(Col_SE);
+		if (!(other.gameObject.tag == "CBP"))
         {
-            colision_SE.PlayOneShot(Col_SE);
             Destroy(this.gameObject);
         }
     }
+
 }

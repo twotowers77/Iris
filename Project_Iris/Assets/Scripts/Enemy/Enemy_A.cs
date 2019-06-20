@@ -4,10 +4,30 @@ using UnityEngine;
 
 public class Enemy_A : MonoBehaviour
 {
+	Animator Anim_;
     public GameObject enemy_1;
+	private int AnimCnt;
 
+	void Start()
+	{
+		Anim_ = GetComponent<Animator>();
+		//AnimCnt = 0;
+	}
 
-    protected virtual void OnCollisionEnter(Collision collision)
+	/*void Update()
+	{
+		AnimCnt++;
+		if(AnimCnt <= 60)
+		{
+			AnimCnt = 0;
+		}
+		if(AnimCnt == 60)
+		{
+
+		}
+	}*/
+
+	protected virtual void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "CBP")
         {
@@ -22,4 +42,5 @@ public class Enemy_A : MonoBehaviour
 		Vector3 enV = this.gameObject.transform.position;
 		Instantiate(this.enemy_1, enV, Quaternion.identity);
 	}
+
 }

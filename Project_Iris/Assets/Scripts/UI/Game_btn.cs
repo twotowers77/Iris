@@ -23,7 +23,7 @@ public class Game_btn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Pause")) {
             paused = !paused;
         }
         if (paused == true)
@@ -38,6 +38,20 @@ public class Game_btn : MonoBehaviour
             PauseUI.SetActive(false);
             Time.timeScale = 1f;
         }
+
+        if (Time_count.LimitTime <= 0)
+        {
+            ClearPanel = true;
+            paused = false;
+            PauseUI.SetActive(false);
+        }
+		
+        if (ClearPanel == true)
+        {
+            ClearUI.SetActive(true);
+            Time.timeScale = 0;
+        }
+        
     }
     public void Resume()
     {

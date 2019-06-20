@@ -42,6 +42,7 @@ public class Video_Manager : MonoBehaviour
         _audio.Play();
         while (_video.isPlaying)
         {
+            if (Input.anyKey) SceneManager.LoadScene("Title");
             Debug.Log(" Time : " + Mathf.FloorToInt((float)_video.time));
             yield return null;
         }

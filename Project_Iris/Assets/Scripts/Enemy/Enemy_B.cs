@@ -37,9 +37,9 @@ public class Enemy_B : Enemy_A
     }
     protected override void Change()
     {
-        Destroy(this.gameObject);
-        Vector3 enV = this.gameObject.transform.position;
-        Instantiate(this.enemy_2, enV, Quaternion.identity);
+		Destroy(this.gameObject);
+		Vector3 enV = this.gameObject.transform.position;
+		Instantiate(this.enemy_2, enV, Quaternion.identity);
     }
 }
 
