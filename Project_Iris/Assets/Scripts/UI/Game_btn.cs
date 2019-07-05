@@ -6,23 +6,39 @@ using UnityEngine.SceneManagement;
 
 public class Game_btn : MonoBehaviour
 {
+    [SerializeField]
+    Score_Manager Sm;
+    public static int scoreMax;
+
     public GameObject PauseUI;
     public GameObject ClearUI;
     //public GameObject mamualUI;
     public bool paused = false;
     public bool ClearPanel = false;
-   // private bool mamualPanel = true;
+    // private bool mamualPanel = true;
     // Start is called before the first frame update
     void Start()
     {
+        Sm = GetComponent<Score_Manager>();
+        scoreMax = 25;
+
         PauseUI.SetActive(false);
         ClearUI.SetActive(false);
         // mamualUI.SetActive(true);
-  }
-
+    }
+    public void SumScore() {
+        int Sum = Score_Manager.score_C + Score_Manager.score_E;
+        if(Sum == scoreMax)
+        {
+            ClearPanel = true;
+            paused = false;
+            PauseUI.SetActive(false);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
+        SumScore();
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Pause")) {
             paused = !paused;
         }

@@ -15,6 +15,8 @@ public class ColorBall : MonoBehaviour
     Rigidbody _rigdbody;
     Vector3 _forceDirection;
 
+    public GameObject effect_hit;    //hit（インク）エフェクト
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -45,8 +47,17 @@ public class ColorBall : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-		if(other.gameObject.tag == "obj" || other.gameObject.tag == "Ground")
-		colision_SE.PlayOneShot(Col_SE);
+        if (other.gameObject.tag == "obj" || other.gameObject.tag == "Ground" || other.gameObject.tag == "Enemy")
+        {
+            colision_SE.PlayOneShot(Col_SE);
+            //エフェクトをあたった位置に出す
+            foreach (ContactPoint point in other.contacts)
+            {
+                Vector3 hitPos;
+                hitPos = point.point;
+                Instantiate(this.effect_hit, point.point, transform.rotation);
+            }
+        }
 		if (!(other.gameObject.tag == "CBP"))
         {
             Destroy(this.gameObject);

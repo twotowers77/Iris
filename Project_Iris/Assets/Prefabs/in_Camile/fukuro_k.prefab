@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5673840224377551560}
   m_Layer: 0
   m_Name: fukuro_k
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,6 +77,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy_1: {fileID: 4025574593823793330, guid: a22b3c7986738184397d717bc0e42a7f, type: 3}
+  effect_smoke: {fileID: 7784095234324834522, guid: 610910fc65f36da47a0d2e8778365a71,
+    type: 3}
+  effect_hit: {fileID: 5064278682325194023, guid: 5f7fda939d2f894448fa9bbe589c978a,
+    type: 3}
 --- !u!1 &1392804534
 GameObject:
   m_ObjectHideFlags: 0

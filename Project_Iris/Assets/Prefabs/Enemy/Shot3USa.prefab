@@ -691,7 +691,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94d1cdf68eeb85840910d24550a2e671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy_1: {fileID: 0}
+  enemy_2: {fileID: 0}
+  effect_hit: {fileID: 5064278682325194023, guid: 5f7fda939d2f894448fa9bbe589c978a,
+    type: 3}
 --- !u!195 &365186306383647923
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -702,7 +704,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 9
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

@@ -88,11 +88,6 @@ public class Iris : MonoBehaviour
             else if (_horizontal <= -0.1f) { _animator.SetBool("isWalk", true); }
             else { _animator.SetBool("isWalk", false); }*/
 
-            /*if (Input.GetMouseButtonDown(0) && Time.timeScale == 1f)
-            {
-                _shotSE.PlayOneShot(_AttackSE);
-                ColorBallShot();
-            }*/
 			if (Input.GetButtonDown("Fire1") && Time.timeScale == 1f)
 			{
 				_shotSE.PlayOneShot(_AttackSE);
@@ -100,9 +95,20 @@ public class Iris : MonoBehaviour
 			}
             if (isGround == true)
             {
-                Run();
                 jumpCount = 1;
-                if (Input.GetButtonDown("Jump"))
+				if (Input.GetButton("Run"))
+				{
+					isRun = true;
+					moveSpeed = runSpeed;
+					Debug.Log("111");	
+				}
+				else
+				{
+					isRun = false;
+					moveSpeed = walkSpeed;
+				}
+
+				if (Input.GetButtonDown("Jump"))
                 {
                     if (jumpCount == 1)
                     {
@@ -112,7 +118,7 @@ public class Iris : MonoBehaviour
                     }
 					if (jumpCount == 0)
 					{
-
+				
 					}
                 }
             }
@@ -120,7 +126,7 @@ public class Iris : MonoBehaviour
     }
 	private void OnCollisionEnter(Collision col)
 	{
-		if(col.gameObject.tag == "Ground")
+		if(col.gameObject.tag == "Ground" || col.gameObject.tag == "obj")
 		{
 			isGround = true;
 		}
@@ -142,20 +148,6 @@ public class Iris : MonoBehaviour
 			rigidbody.AddForce(_AimPoint.transform.forward * 50f, ForceMode.Impulse);
 		}
 	}
-
-    private void Run()
-    {
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            isRun = true;
-            moveSpeed = runSpeed;
-        }
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            isRun = false;
-            moveSpeed = walkSpeed;
-        }
-    }
 
     private void RotateView()
     {

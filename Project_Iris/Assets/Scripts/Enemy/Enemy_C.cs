@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy_C : Enemy_A
+public class Enemy_C : Enemy_B
 {
-	Animator Anim2_;
+	Animator Anim_;
 	public GameObject enemy_3;
-    protected Transform goalTransform;
+    //protected Transform goalTransform;
     // Start is called before the first frame update
     void Start()
     {
-		Anim2_ = GetComponent<Animator>();
+		Anim_ = GetComponent<Animator>();
 		NavMeshAgent agent = GetComponent<NavMeshAgent>();
         goalTransform = GameObject.FindWithTag("goal").GetComponent<Transform>();
         agent.destination = goalTransform.position;
@@ -25,22 +25,12 @@ public class Enemy_C : Enemy_A
 
     protected override void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "CBP")
-        {
-            Change();
-        }
-
-        if (collision.gameObject.tag.Equals("goal"))
-        {
-            Score_Manager.score_E += 1;
-            Destroy(this.gameObject);
-        }
+       base.OnCollisionEnter(collision);
     }
     protected override void Change()
     {
         Destroy(this.gameObject);
 
-        Vector3 enV = this.gameObject.transform.position;
-        Instantiate(this.enemy_3, enV, Quaternion.identity);
+        Instantiate(this.enemy_3, enPos, transform.rotation);
     }
 }

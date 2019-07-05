@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy_D : Enemy_A
+public class Enemy_D : Enemy_B
 {
-	Animator Anim3_;
-    protected Transform goalTransform;
+	Animator Anim_;
+   // protected Transform goalTransform;
     // Start is called before the first frame update
     void Start()
     {
-		Anim3_ = GetComponent<Animator>();
+		Anim_ = GetComponent<Animator>();
 		NavMeshAgent agent = GetComponent<NavMeshAgent>();
         goalTransform = GameObject.FindWithTag("goal").GetComponent<Transform>();
         agent.destination = goalTransform.position;
@@ -21,7 +21,6 @@ public class Enemy_D : Enemy_A
     {
         
     }
-
     protected override void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "CBP")

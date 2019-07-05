@@ -219,3 +219,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Col_SE: {fileID: 8300000, guid: c341a67ca6b0ebb4bac235bc650fd0ff, type: 3}
+  effect_hit: {fileID: 5064278682325194023, guid: 5f7fda939d2f894448fa9bbe589c978a,
+    type: 3}

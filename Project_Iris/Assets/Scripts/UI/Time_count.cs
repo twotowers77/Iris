@@ -11,7 +11,7 @@ public class Time_count : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LimitTime = 120;
+        LimitTime = 150;
     }
 
     // Update is called once per frame

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 753825654}
   m_Layer: 0
   m_Name: taru_u
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,3 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy_1: {fileID: 1462369940, guid: 76c6e96507b916b4fabeee107d27cb8a, type: 3}
+  effect_smoke: {fileID: 7784095234324834522, guid: 610910fc65f36da47a0d2e8778365a71,
+    type: 3}
+  effect_hit: {fileID: 5064278682325194023, guid: 5f7fda939d2f894448fa9bbe589c978a,
+    type: 3}

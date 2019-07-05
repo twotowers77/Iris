@@ -4,43 +4,44 @@ using UnityEngine;
 
 public class Enemy_A : MonoBehaviour
 {
-	Animator Anim_;
-    public GameObject enemy_1;
-	private int AnimCnt;
+    Animator Anim_;
+    public GameObject enemy_1;       //次に出すオブジェクト 
+    public GameObject effect_smoke;  //煙エフェクト
+    private int AnimCnt;
+    Vector3 enPos;                   //このオブジェクトの位置
 
-	void Start()
-	{
-		Anim_ = GetComponent<Animator>();
-		//AnimCnt = 0;
-	}
-
-	/*void Update()
-	{
-		AnimCnt++;
-		if(AnimCnt <= 60)
-		{
-			AnimCnt = 0;
-		}
-		if(AnimCnt == 60)
-		{
-
-		}
-	}*/
-
-	protected virtual void OnCollisionEnter(Collision collision)
+    void Start()
     {
-        if (collision.gameObject.tag == "CBP")
+        Anim_ = GetComponent<Animator>();
+        AnimCnt = 0;
+    }
+
+    void Update()
+    {
+        //AnimCnt++;
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-				Change();
+            Anim_.SetBool("isPlay", true);
+        }
+        else
+        {
+            Anim_.SetBool("isPlay", false);
         }
     }
-	protected virtual void Change()
-	{
 
-		Destroy(this.gameObject);
-	
-		Vector3 enV = this.gameObject.transform.position;
-		Instantiate(this.enemy_1, enV, Quaternion.identity);
-	}
-
+    protected virtual void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "CBP")  //ボールにあたったら
+        {
+            enPos = this.gameObject.transform.position;                 // オブジェクトの位置を取得
+            Instantiate(this.effect_smoke, enPos, transform.rotation);  //煙エフェクト
+            Invoke("Change", 1);
+        }
+    }
+    //モンスターを出現させる
+    protected virtual void Change()
+    {
+        Instantiate(this.enemy_1, enPos, transform.rotation);
+        Destroy(this.gameObject);
+    }
 }

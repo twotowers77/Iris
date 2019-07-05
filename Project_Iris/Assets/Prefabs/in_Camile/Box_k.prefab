@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 2343075718160311538}
   - component: {fileID: 5506431795563158616}
   - component: {fileID: 3513994339723488165}
+  - component: {fileID: 399143192851241570}
   m_Layer: 0
   m_Name: Box_k
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,3 +126,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy_1: {fileID: 4025574593823793330, guid: a22b3c7986738184397d717bc0e42a7f, type: 3}
+  effect_smoke: {fileID: 7784095234324834522, guid: 610910fc65f36da47a0d2e8778365a71,
+    type: 3}
+--- !u!95 &399143192851241570
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8399259774393733132}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 6b0beb374c36c7345941aaef8fc4844b, type: 3}
+  m_Controller: {fileID: 9100000, guid: b2ca2e5f5271df645a09c35d57f93ed8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
