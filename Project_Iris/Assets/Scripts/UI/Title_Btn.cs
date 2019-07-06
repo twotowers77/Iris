@@ -2,31 +2,48 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Title_Btn : MonoBehaviour
 {
     public AudioClip SE;
     AudioSource buttonSE;
     public Video_Manager VM;
+    public Image fade;
+
+    float fades = 0.0f;
+    //float time = 0.0f;
+
     void Start()
     {
         buttonSE = GetComponent<AudioSource>();
         VM = GameObject.Find("Video Player").GetComponent<Video_Manager>();
-        
+
     }
-    public void Gamescenes(){
+    public void Gamescenes() {
         buttonSE.PlayOneShot(SE);
-        Invoke("GS", 1f);
+        SceneManager.LoadScene("GameScenes");
     }
-    
-    public void GS(){ SceneManager.LoadScene("GameScenes");  }
 
     void Update()
     {
-        //if (Input.anyKey) SceneManager.LoadScene("Title");
         if (Input.GetButtonDown("Pause"))
         {
-            Gamescenes();
+            StartCoroutine(FadeOut());
         }
+    }
+
+    IEnumerator FadeOut()
+    {
+        //time += Time.deltaTime;
+        while (fades < 1.0f)
+        {
+            fades += 0.2f;
+            fade.color = new Color(0, 0, 0, fades);
+            yield return new WaitForSeconds(0.1f);
+            //time = 0.0f;
+        }
+        Gamescenes();
+        yield return null;
     }
 }
