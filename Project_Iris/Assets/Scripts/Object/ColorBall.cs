@@ -45,8 +45,8 @@ public class ColorBall : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision other)
-    {
+       void OnCollisionEnter(Collision other)
+    {    
         if (other.gameObject.tag == "obj" || other.gameObject.tag == "Ground" || other.gameObject.tag == "Enemy")
         {
             colision_SE.PlayOneShot(Col_SE);

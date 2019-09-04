@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5064278682325194021}
   - component: {fileID: 5064278682325194020}
+  - component: {fileID: 2483471778188748775}
   m_Layer: 0
   m_Name: effect_hit
   m_TagString: Untagged
@@ -46,3 +47,15 @@ MonoBehaviour:
   effectAsset: {fileID: 11400000, guid: fd6cd97c6e84e6c439b4880c8781fbcc, type: 2}
   playOnStart: 1
   isLooping: 0
+--- !u!114 &2483471778188748775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5064278682325194023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a6daa0f1776d2648a7da1522b029746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

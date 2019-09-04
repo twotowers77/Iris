@@ -6,8 +6,9 @@ using UnityEngine.UI;
 
 public class Title_Btn : MonoBehaviour
 {
-    public AudioClip SE;
-    AudioSource buttonSE;
+    public AudioClip BGM;
+    AudioSource TitleBGM;
+
     public Video_Manager VM;
     public Image fade;
 
@@ -16,12 +17,12 @@ public class Title_Btn : MonoBehaviour
 
     void Start()
     {
-        buttonSE = GetComponent<AudioSource>();
+        TitleBGM = GetComponent<AudioSource>();
         VM = GameObject.Find("Video Player").GetComponent<Video_Manager>();
-
+		Time.timeScale = 1f;
     }
     public void Gamescenes() {
-        buttonSE.PlayOneShot(SE);
+        TitleBGM.PlayOneShot(BGM);
         SceneManager.LoadScene("GameScenes");
     }
 

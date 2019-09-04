@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{35BA59FF-EC8E-0091-5647-3949EDF9FA92}</ProjectGuid>
+    <ProjectGuid>{6577003C-5DF8-7041-9324-410A8C2AA380}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor-firstpass</AssemblyName>
@@ -63,19 +63,19 @@
   <ItemGroup>
     <Compile Include="Assets\Standard Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/Strauss/Desktop/Project_Iris -Input JoyStick 게이지 이전 - 복사본/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/Strauss/Desktop/Project_iris/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/Strauss/Desktop/Project_Iris -Input JoyStick 게이지 이전 - 복사본/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/Strauss/Desktop/Project_iris/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/Strauss/Desktop/Project_Iris -Input JoyStick 게이지 이전 - 복사본/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/Strauss/Desktop/Project_iris/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/Strauss/Desktop/Project_Iris -Input JoyStick 게이지 이전 - 복사본/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/Strauss/Desktop/Project_iris/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/Strauss/Desktop/Project_Iris -Input JoyStick 게이지 이전 - 복사본/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>C:/Users/Strauss/Desktop/Project_iris/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -312,19 +312,19 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
-      <HintPath>C:/Users/Strauss/Desktop/Project_Iris -Input JoyStick 게이지 이전 - 복사본/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
+      <HintPath>C:/Users/Strauss/Desktop/Project_iris/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Users/Strauss/Desktop/Project_Iris -Input JoyStick 게이지 이전 - 복사본/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>C:/Users/Strauss/Desktop/Project_iris/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/Strauss/Desktop/Project_Iris -Input JoyStick 게이지 이전 - 복사본/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/Strauss/Desktop/Project_iris/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/Strauss/Desktop/Project_Iris -Input JoyStick 게이지 이전 - 복사본/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>C:/Users/Strauss/Desktop/Project_iris/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Purchasing">
-      <HintPath>C:/Users/Strauss/Desktop/Project_Iris -Input JoyStick 게이지 이전 - 복사본/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
+      <HintPath>C:/Users/Strauss/Desktop/Project_iris/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/mscorlib.dll</HintPath>
@@ -356,15 +356,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{A304EFEA-E4F5-1276-8CB2-19EB459B9CAE}</Project>
+      <Project>{850F2009-FDE1-4262-8DEA-016421C297E1}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
     <ProjectReference Include="EffekseerEditor.csproj">
-      <Project>{2C45B365-695A-FFF8-A348-EC24D0F6F762}</Project>
+      <Project>{E9DE2C3E-19A9-11A5-68C2-A28399D878F8}</Project>
       <Name>EffekseerEditor</Name>
     </ProjectReference>
     <ProjectReference Include="Effekseer.csproj">
-      <Project>{B23D35AE-874F-4056-10C1-945535072CA1}</Project>
+      <Project>{A99DBF2C-ADF4-3299-AFFA-6AA71C059C60}</Project>
       <Name>Effekseer</Name>
     </ProjectReference>
   </ItemGroup>

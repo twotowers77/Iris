@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Score_EscapedUpdate : MonoBehaviour
 {
     Text scoreLabel_E;
+    
     void Awake()
     {
         scoreLabel_E = GetComponent<Text>();

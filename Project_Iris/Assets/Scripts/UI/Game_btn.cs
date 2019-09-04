@@ -10,24 +10,32 @@ public class Game_btn : MonoBehaviour
     Score_Manager Sm;
     public static int scoreMax;
 
+    public AudioSource BGM1;
+    public AudioSource BGM2;
+    public AudioClip ResultSE;
+
+    public GameObject countDown;
     public GameObject PauseUI;
     public GameObject ClearUI;
-    //public GameObject mamualUI;
+    public GameObject GameUI;
     public bool paused = false;
     public bool ClearPanel = false;
-    // private bool mamualPanel = true;
-    // Start is called before the first frame update
+    public bool cntDown = true;
+    public bool SEtemp = false;
+
     void Start()
     {
+        GameObject[] gesu = GameObject.FindGameObjectsWithTag("Enemy");
         Sm = GetComponent<Score_Manager>();
-        scoreMax = 25;
-
+        //BGM1.PlayOneShot(GameBGM1);
+        scoreMax = gesu.Length;
+        countDown.SetActive(true);
         PauseUI.SetActive(false);
         ClearUI.SetActive(false);
-        // mamualUI.SetActive(true);
+        GameUI.SetActive(true);
     }
     public void SumScore() {
-        int Sum = Score_Manager.score_C + Score_Manager.score_E;
+        int Sum = Score_Manager.score_C;
         if(Sum == scoreMax)
         {
             ClearPanel = true;
@@ -35,13 +43,36 @@ public class Game_btn : MonoBehaviour
             PauseUI.SetActive(false);
         }
     }
-    // Update is called once per frame
     void Update()
     {
         SumScore();
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Pause")) {
             paused = !paused;
         }
+        if (ClearPanel == true) {
+            if (Input.GetKeyDown(KeyCode.A) || Input.GetButtonDown("A"))
+            {
+                Restart();
+            }
+            if (Input.GetKeyDown(KeyCode.B) || Input.GetButtonDown("B"))
+            {
+                TitleMenu();
+            }
+        }
+        if (cntDown)
+        {
+            StartCoroutine("StartDelay");
+            cntDown = false;
+        }
+
+        if (Input.GetButtonDown("A") && Input.GetButtonDown("B") && Input.GetButtonDown("X") && Input.GetButtonDown("Y"))
+		{
+			TitleMenu();
+		}
+		if (Input.GetButtonDown("Fire1") && Input.GetButtonDown("A") && Input.GetButton("B"))
+		{
+			Quit();
+		}
         if (paused == true)
         {
             PauseUI.SetActive(true);
@@ -58,16 +89,22 @@ public class Game_btn : MonoBehaviour
         if (Time_count.LimitTime <= 0)
         {
             ClearPanel = true;
-            paused = false;
+			Time.timeScale = 0;
             PauseUI.SetActive(false);
         }
-		
+
         if (ClearPanel == true)
         {
+            if(SEtemp == false)
+            {
+                SEtemp = true;
+                BGM1.Stop();
+                BGM2.PlayOneShot(ResultSE);
+            }
+            GameUI.SetActive(false);
             ClearUI.SetActive(true);
             Time.timeScale = 0;
         }
-        
     }
     public void Resume()
     {
@@ -88,8 +125,13 @@ public class Game_btn : MonoBehaviour
         Application.Quit();
     }
 
-    public void OK()
+    IEnumerator StartDelay()
     {
-        //mamualPanel = false;
+        Time.timeScale = 0;
+        float pauseTime = Time.realtimeSinceStartup + 4f;
+        while (Time.realtimeSinceStartup < pauseTime)
+            yield return 0;
+        countDown.gameObject.SetActive(false);
+        Time.timeScale = 1f;
     }
 }

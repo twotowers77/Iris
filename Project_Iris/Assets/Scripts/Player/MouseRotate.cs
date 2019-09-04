@@ -6,11 +6,11 @@ using UnityEngine;
 [Serializable]
 public class MouseRotate {
 
-    public float XSensitivity = 2f;     //X 敏感度
-    public float YSensitivity = 2f;     //Y 敏感度
+    public float XSensitivity = 1.8f;     //X 敏感度
+    public float YSensitivity = 1.8f;     //Y 敏感度
     public bool clampVR = true;         //Vertical Rotation Limited
-    public float MinimumX = -90F;       //X-Axis Minimum Angle Degree
-    public float MaximumX = 90F;        //Y-Axis Max Angle Degree
+    public float MinimumX = -80F;       //X-Axis Minimum Angle Degree
+    public float MaximumX = 50F;        //Y-Axis Max Angle Degree
     public bool smooth;          //smooth setting 
     public float smoothTime = 5f;       //부드러움 (*Time.deltaTime)
     public bool lockCursor = true;      //Mouse Visible (可視性の有無)

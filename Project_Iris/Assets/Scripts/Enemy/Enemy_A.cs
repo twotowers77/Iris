@@ -4,28 +4,36 @@ using UnityEngine;
 
 public class Enemy_A : MonoBehaviour
 {
+    public AudioClip Col_SE;
+    AudioSource collision_SE;
+
     Animator Anim_;
     public GameObject enemy_1;       //次に出すオブジェクト 
     public GameObject effect_smoke;  //煙エフェクト
     private int AnimCnt;
     Vector3 enPos;                   //このオブジェクトの位置
 
+    bool hit = false;
+
     void Start()
     {
+        collision_SE = GetComponent<AudioSource>();
         Anim_ = GetComponent<Animator>();
         AnimCnt = 0;
     }
 
     void Update()
     {
-        //AnimCnt++;
-        if (Input.GetKeyDown(KeyCode.Space))
+        AnimCnt++;
+        int no = 0;
+        if (AnimCnt >= 100)
         {
-            Anim_.SetBool("isPlay", true);
+            no = Random.Range(0, 5);
+            AnimCnt = 0;
         }
-        else
+        if (no == 1)
         {
-            Anim_.SetBool("isPlay", false);
+            animPlay();
         }
     }
 
@@ -33,9 +41,15 @@ public class Enemy_A : MonoBehaviour
     {
         if (collision.gameObject.tag == "CBP")  //ボールにあたったら
         {
-            enPos = this.gameObject.transform.position;                 // オブジェクトの位置を取得
-            Instantiate(this.effect_smoke, enPos, transform.rotation);  //煙エフェクト
-            Invoke("Change", 1);
+            if (hit == false)
+            {
+                hit = true;
+                enPos = this.gameObject.transform.position;                 // オブジェクトの位置を取得
+                Instantiate(this.effect_smoke, enPos, transform.rotation);  //煙エフェクト
+                Invoke("Change", 2.0f);
+
+                collision_SE.PlayOneShot(Col_SE);
+            }
         }
     }
     //モンスターを出現させる
@@ -43,5 +57,10 @@ public class Enemy_A : MonoBehaviour
     {
         Instantiate(this.enemy_1, enPos, transform.rotation);
         Destroy(this.gameObject);
+    }
+    //アニメーション再生（がたがた）
+    protected void animPlay()
+    {
+        Anim_.Play("play", 0, 0.0f);
     }
 }

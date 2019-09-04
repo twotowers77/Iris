@@ -10,11 +10,12 @@ public class Score_Manager : MonoBehaviour
 
     void Awake()
     {
-        score_C = 0; score_E = 0;
+        score_C = 0;
+        GameObject[] gesu = GameObject.FindGameObjectsWithTag("Enemy");
+        score_E = gesu.Length;
     }
     // Update is called once per frame
     void Update()
     {
-        
     }
 }

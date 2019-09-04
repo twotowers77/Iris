@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7784095234324834520}
   - component: {fileID: 7784095234324834523}
+  - component: {fileID: 6597267770761067241}
   m_Layer: 0
   m_Name: effect_smoke
   m_TagString: Untagged
@@ -43,6 +44,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35d396bcb8480c24eb784eebe6096a99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectAsset: {fileID: 11400000, guid: fecff1bf4dd4cf64886c6105a6d02822, type: 2}
+  effectAsset: {fileID: 11400000, guid: 8f3ba292933251f4f861419f122c6ea0, type: 2}
   playOnStart: 1
   isLooping: 0
+--- !u!114 &6597267770761067241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7784095234324834522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a6daa0f1776d2648a7da1522b029746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
